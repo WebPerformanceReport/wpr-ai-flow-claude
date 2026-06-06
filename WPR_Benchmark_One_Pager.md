@@ -255,6 +255,26 @@ Do not use all four every time. Choose those that apply to the specific site.
 
 For each site, adjust the language to its profile. If the client provides context, use it. If not, reasonably infer from the business type (traditional retail, financial, hardware store, etc.) and mark assumptions as such.
 
+### 6.6 Benchmark threshold rules
+
+All benchmark classifications must follow the official thresholds defined in `WPR_Claude_Instructions.md` Section 5. Do not invent thresholds or create arbitrary Good / Needs Improvement / Poor classifications.
+
+Apply thresholds in this hierarchy:
+
+1. Official standard behind the metric (e.g., Google Core Web Vitals specification).
+2. Official source tool classification (e.g., HTTP Observatory grading scale).
+3. Clearly stated contextual interpretation.
+4. No classification if no reliable threshold exists.
+
+Dimension-specific notes:
+
+- **Performance**: use the Core Web Vitals thresholds from `WPR_Claude_Instructions.md` Section 5. TTFB is a diagnostic metric, not one of the three Core Web Vitals (LCP, INP, CLS). Apply it as supporting context, not as a primary classification.
+- **Security**: follow the HTTP Observatory grading scale from `WPR_Claude_Instructions.md` Section 5.
+- **Accessibility**: follow WAVE findings and WCAG-based interpretation from `WPR_Claude_Instructions.md` Section 5.
+- **Analytics**: avoid universal Good / Poor classifications. Engagement Rate, Bounce Rate, and session metrics vary significantly by industry and site type. Prefer trend-based and context-based interpretation unless the user provides a specific benchmark.
+
+If a threshold is unclear, missing, or not officially defined, state this limitation explicitly instead of forcing a rating.
+
 ---
 
 ## 7. Visual system
