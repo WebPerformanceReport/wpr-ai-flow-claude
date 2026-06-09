@@ -60,7 +60,7 @@ Dimension slugs: `perf_sec_a11y_ga4` (4D), `perf_sec_a11y` / `perf_sec_ga4` / `p
 
 ## Key Constraints Embedded in the Instructions
 
-- **Communication opacity**: Claude must never mention the inbox connector (Gmail, Outlook), thread IDs, message IDs, or retrieval steps in user-facing responses. The integration appears seamless.
+- **Clean response surface**: Do not expose implementation details (connector names, thread IDs, message IDs, retrieval steps) in user-facing responses. Reference data by report name, not by its inbox origin. The goal is an executive-grade UX, not raw plumbing.
 - **No data fabrication**: if a metric is missing, say so. Never fill in absent values.
 - **Output order for multi-category analysis**: Performance → Security → Accessibility → Analytics.
 - **CrUX over lab data**: field data (Chrome User Experience Report) is the primary source for performance metrics. Lab data is only used on explicit request.
